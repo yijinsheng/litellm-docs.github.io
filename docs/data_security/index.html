@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-data_security" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">数据隐私与安全 | liteLLM</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.litellm.ai/img/docusaurus-social-card.png"><meta data-rh="true" name="twitter:image" content="https://docs.litellm.ai/img/docusaurus-social-card.png"><meta data-rh="true" property="og:url" content="https://docs.litellm.ai/docs/data_security"><meta data-rh="true" property="og:locale" content="zh_CN"><meta data-rh="true" name="docusaurus_locale" content="zh-CN"><meta data-rh="true" name="docsearch:language" content="zh-CN"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="数据隐私与安全 | liteLLM"><meta data-rh="true" name="description" content="在LiteLLM，保护您的数据隐私和安全是我们最优先考虑的事情。我们深知您分享给我们的数据的重要性，并会以最高标准的谨慎来处理这些数据。"><meta data-rh="true" property="og:description" content="在LiteLLM，保护您的数据隐私和安全是我们最优先考虑的事情。我们深知您分享给我们的数据的重要性，并会以最高标准的谨慎来处理这些数据。"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.litellm.ai/docs/data_security"><link data-rh="true" rel="alternate" href="https://docs.litellm.ai/docs/data_security" hreflang="zh-CN"><link data-rh="true" rel="alternate" href="https://docs.litellm.ai/docs/data_security" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"数据隐私与安全","item":"https://docs.litellm.ai/docs/data_security"}]}</script><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7K215ZVNC"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-K7K215ZVNC",{anonymize_ip:!0})</script>
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/release_notes/rss.xml" title="liteLLM RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/release_notes/atom.xml" title="liteLLM Atom Feed">
+<link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="liteLLM RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="liteLLM Atom Feed">
+<script>window.$crisp=[],window.CRISP_WEBSITE_ID="be07a4d6-dba0-4df7-961d-9302c86b7ebc",d=document,s=d.createElement("script"),s.src="https://client.crisp.chat/l.js",s.async=1,d.getElementsByTagName("head")[0].appendChild(s)</script>
+
+<script async src="https://www.feedbackrocket.io/sdk/v1.2.js" data-fr-id="GQwepB0f0L-x_ZH63kR_V" data-fr-theme="dynamic"></script><link rel="stylesheet" href="/assets/css/styles.ab6b1187.css">
+<script src="/assets/js/runtime~main.e2ac0700.js" defer="defer"></script>
+<script src="/assets/js/main.cc386e68.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">🚅 LiteLLM</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/">Docs</a><a class="navbar__item navbar__link" sidebarid="integrationsSidebar" href="/docs/integrations">Integrations</a><a class="navbar__item navbar__link" sidebarid="tutorialSidebar" href="/docs/enterprise">Enterprise</a><a class="navbar__item navbar__link" href="/release_notes">Release Notes</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://models.litellm.ai/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">💸 LLM Model Cost Map<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://www.litellm.ai/support" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Slack/Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div id="inkeep-shadowradix-_R_7j5a5_" style="display:contents"></div><span></span></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/">Getting Started</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/#litellm-python-sdk">LiteLLM Python SDK</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/simple_proxy">LiteLLM AI Gateway (Proxy)</a><button aria-label="展开侧边栏分类 &#x27;LiteLLM AI Gateway (Proxy)&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/supported_endpoints">Supported Endpoints</a><button aria-label="展开侧边栏分类 &#x27;Supported Endpoints&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/providers">Supported Models &amp; Providers</a><button aria-label="展开侧边栏分类 &#x27;Supported Models &amp; Providers&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/budget_manager">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/routing-load-balancing">Routing, Loadbalancing &amp; Fallbacks</a><button aria-label="展开侧边栏分类 &#x27;Routing, Loadbalancing &amp; Fallbacks&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/benchmarks">Load Testing</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/tutorials/openweb_ui">Tutorials</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/extras/contributing_code">Contributing</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/sdk_custom_pricing">Extras</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/sdk_custom_pricing">自定义定价 - SageMaker, Azure 等</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/migration">迁移指南 - LiteLLM v1.0.0+</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/data_security">数据隐私与安全</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/data_retention">数据保留策略</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/proxy/security_encryption_faq">LiteLLM 自托管安全与加密常见问题解答</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/migration_policy">迁移策略</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/docs/project">❤️ 🚅 Projects built on LiteLLM</a><button aria-label="展开侧边栏分类 &#x27;❤️ 🚅 Projects built on LiteLLM&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/extras/code_quality">代码质量</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/rules">规则</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/proxy/team_based_routing">[已弃用] 团队基础路由</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/proxy/customer_routing">[已弃用] 区域路由</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/proxy_server">[旧代理 👉 [新代理](./simple_proxy)] 本地轻量级 LiteLLM 代理服务器</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/troubleshoot">支持与创始人交流</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Extras</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">数据隐私与安全</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>数据隐私与安全</h1></header>
+<p>在LiteLLM，<strong>保护您的数据隐私和安全</strong>是我们最优先考虑的事情。我们深知您分享给我们的数据的重要性，并会以最高标准的谨慎来处理这些数据。</p>
+<p>通过LiteLLM Cloud，我们负责：</p>
+<ul>
+<li>部署</li>
+<li>扩展</li>
+<li>升级和安全补丁</li>
+<li>确保高可用性</li>
+</ul>
+<iframe src="https://status.litellm.ai/badge?theme=light" width="250" height="30" class="inline-block dark:hidden" style="color-scheme:light;margin-top:5px"></iframe>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="安全措施">安全措施<a href="#安全措施" class="hash-link" aria-label="安全措施的直接链接" title="安全措施的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="litellm-cloud">LiteLLM Cloud<a href="#litellm-cloud" class="hash-link" aria-label="LiteLLM Cloud的直接链接" title="LiteLLM Cloud的直接链接">​</a></h3>
+<ul>
+<li>我们使用您的 <code>LITELLM_MASTER_KEY</code> 加密所有存储的数据，并在传输过程中使用 TLS 进行加密。</li>
+<li>我们的数据库和应用程序运行在 GCP 和 AWS 基础设施上，部分由 NeonDB 管理。<!-- -->
+<ul>
+<li>北美数据区域：加利福尼亚北部（AWS/GCP <code>us-west-1</code>）及弗吉尼亚（AWS <code>us-east-1</code>）</li>
+<li>欧洲数据区域：德国/法兰克福（AWS/GCP <code>eu-central-1</code>）</li>
+</ul>
+</li>
+<li>所有用户都可以通过 OAuth 2.0 的 Google、Okta、Microsoft 和 KeyCloak 进行单点登录 (SSO)。</li>
+<li>审计日志并设有保留策略</li>
+<li>控制可以访问您云中 LiteLLM 实例的允许 IP 地址</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="自托管-litellm-实例">自托管 LiteLLM 实例<a href="#自托管-litellm-实例" class="hash-link" aria-label="自托管 LiteLLM 实例的直接链接" title="自托管 LiteLLM 实例的直接链接">​</a></h3>
+<ul>
+<li><strong>当您自托管时，LiteLLM 服务器不会存储任何数据或遥测数据</strong></li>
+<li>有关安装和配置，请参见：<a href="/docs/proxy/deploy">自托管指南</a></li>
+<li><strong>遥测</strong>：当您自托管 LiteLLM 时，我们不运行任何遥测</li>
+</ul>
+<p>如有安全问题，请联系 <a href="mailto:support@berri.ai" target="_blank" rel="noopener noreferrer">support@berri.ai</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="安全认证"><strong>安全认证</strong><a href="#安全认证" class="hash-link" aria-label="安全认证的直接链接" title="安全认证的直接链接">​</a></h2>
+<table><thead><tr><th>认证</th><th>状态</th></tr></thead><tbody><tr><td>SOC 2 Type I</td><td>已认证。在企业版计划中可请求查看报告。</td></tr><tr><td>SOC 2 Type II</td><td>已认证。在企业版计划中可请求查看报告。</td></tr><tr><td>ISO 27001</td><td>已认证。在企业版中可请求查看报告。</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="litellm-cloud-支持的数据区域">LiteLLM Cloud 支持的数据区域<a href="#litellm-cloud-支持的数据区域" class="hash-link" aria-label="LiteLLM Cloud 支持的数据区域的直接链接" title="LiteLLM Cloud 支持的数据区域的直接链接">​</a></h2>
+<p>LiteLLM 支持以下数据区域：</p>
+<ul>
+<li>北美，加利福尼亚北部（AWS/GCP <code>us-west-1</code>）</li>
+<li>欧洲，法兰克福，德国（AWS/GCP <code>eu-central-1</code>）</li>
+</ul>
+<p>这两个区域之间的所有数据、用户账户和基础设施都是完全分离的</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="个人数据收集">个人数据收集<a href="#个人数据收集" class="hash-link" aria-label="个人数据收集的直接链接" title="个人数据收集的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="自托管-litellm-用户">自托管 LiteLLM 用户：<a href="#自托管-litellm-用户" class="hash-link" aria-label="自托管 LiteLLM 用户：的直接链接" title="自托管 LiteLLM 用户：的直接链接">​</a></h3>
+<ul>
+<li>当您自托管我们的软件时，不会收集或传输任何个人数据到 LiteLLM 服务器。</li>
+<li>所有生成或处理的数据均保留在您的自有基础设施中。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="litellm-cloud-用户">LiteLLM Cloud 用户：<a href="#litellm-cloud-用户" class="hash-link" aria-label="LiteLLM Cloud 用户：的直接链接" title="LiteLLM Cloud 用户：的直接链接">​</a></h3>
+<ul>
+<li>LiteLLM Cloud 跟踪语言模型的使用数据 - 我们不会访问或存储您 API 请求和响应的消息/回复内容。您可以查看 <a href="https://github.com/BerriAI/litellm/blob/main/schema.prisma#L174" target="_blank" rel="noopener noreferrer">跟踪字段</a></li>
+</ul>
+<p><strong>如何使用和分享个人数据</strong></p>
+<ul>
+<li>仅代理管理员可以查看其使用数据，并且只能看到他们组织的使用数据。</li>
+<li>代理管理员可以邀请其他用户/管理员访问他们的服务器以查看自己的使用数据</li>
+<li>LiteLLM Cloud 不会将任何使用数据出售或与第三方共享。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cookie-信息安全和隐私">Cookie 信息、安全和隐私<a href="#cookie-信息安全和隐私" class="hash-link" aria-label="Cookie 信息、安全和隐私的直接链接" title="Cookie 信息、安全和隐私的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="自托管-litellm-用户-1">自托管 LiteLLM 用户：<a href="#自托管-litellm-用户-1" class="hash-link" aria-label="自托管 LiteLLM 用户：的直接链接" title="自托管 LiteLLM 用户：的直接链接">​</a></h3>
+<ul>
+<li>Cookie 数据保留在您的自有基础设施中。</li>
+<li>LiteLLM 使用少量的 cookie，仅用于允许代理用户访问 LiteLLM 管理界面。</li>
+<li>这些 cookie 存储在您登录后的浏览器中。</li>
+<li>我们不使用 cookie 用于广告、跟踪或任何其他目的，仅用于保持您的登录会话。</li>
+<li>所有用于维持应用程序 UI 用户认证和会话管理的 cookie 都是必需的。</li>
+<li>会话 cookie 在关闭浏览器、注销或 24 小时后过期。</li>
+<li>LiteLLM 不使用第三方 cookie。</li>
+<li>管理界面通过 cookie 认证您的登录会话。</li>
+<li>该 cookie 存储为 JWT 并不可被系统其他部分访问。</li>
+<li>我们（LiteLLM）不会出于任何其他目的访问或分享此 cookie 数据。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="litellm-cloud-用户-1">LiteLLM Cloud 用户：<a href="#litellm-cloud-用户-1" class="hash-link" aria-label="LiteLLM Cloud 用户：的直接链接" title="LiteLLM Cloud 用户：的直接链接">​</a></h3>
+<ul>
+<li>LiteLLM 使用少量的 cookie，仅用于允许代理用户访问 LiteLLM 管理界面。</li>
+<li>这些 cookie 存储在您登录后的浏览器中。</li>
+<li>我们不使用 cookie 用于广告、跟踪或任何其他目的，仅用于保持您的登录会话。</li>
+<li>所有用于维持应用程序 UI 用户认证和会话管理的 cookie 都是必需的。</li>
+<li>会话 cookie 在关闭浏览器、注销或 24 小时后过期。</li>
+<li>LiteLLM 不使用第三方 cookie。</li>
+<li>管理界面通过 cookie 认证您的登录会话。</li>
+<li>该 cookie 存储为 JWT 并不可被系统其他部分访问。</li>
+<li>我们（LiteLLM）不会出于任何其他目的访问或分享此 cookie 数据。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="安全漏洞报告指南">安全漏洞报告指南<a href="#安全漏洞报告指南" class="hash-link" aria-label="安全漏洞报告指南的直接链接" title="安全漏洞报告指南的直接链接">​</a></h2>
+<p>我们重视安全社区在保护我们的系统和用户方面的作用。如需报告安全漏洞，请：</p>
+<ul>
+<li>通过 <a href="mailto:support@berri.ai" target="_blank" rel="noopener noreferrer">support@berri.ai</a> 发送详细信息</li>
+<li>包括重现问题的步骤</li>
+<li>提供任何相关附加信息</li>
+</ul>
+<p>我们将尽快审核所有报告。请注意，目前我们不提供漏洞赏金计划。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="安全漏洞扫描">安全漏洞扫描<a href="#安全漏洞扫描" class="hash-link" aria-label="安全漏洞扫描的直接链接" title="安全漏洞扫描的直接链接">​</a></h2>
+<ul>
+<li>LiteLLM 在所有构建的 Docker 镜像上运行了 <a href="https://github.com/anchore/grype" target="_blank" rel="noopener noreferrer"><code>grype</code></a> 安全扫描。<!-- -->
+<ul>
+<li>请参见 <a href="https://github.com/BerriAI/litellm/blob/main/.circleci/config.yml#L1099" target="_blank" rel="noopener noreferrer"><code>grype litellm</code> 检查在 ci/cd 中</a></li>
+<li>当前状态：✅ 通过。未发现高/关键级别漏洞。</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="法律合规常见问题">法律/合规常见问题<a href="#法律合规常见问题" class="hash-link" aria-label="法律/合规常见问题的直接链接" title="法律/合规常见问题的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="采购选项">采购选项<a href="#采购选项" class="hash-link" aria-label="采购选项的直接链接" title="采购选项的直接链接">​</a></h3>
+<ol>
+<li>开票</li>
+<li>AWS Marketplace</li>
+<li>Azure Marketplace</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="供应商信息">供应商信息<a href="#供应商信息" class="hash-link" aria-label="供应商信息的直接链接" title="供应商信息的直接链接">​</a></h3>
+<p>法人实体名称：Berrie AI Incorporated</p>
+<p>公司电话号码：7708783106</p>
+<p>安全事件联系邮箱地址：<a href="mailto:krrish@berri.ai" target="_blank" rel="noopener noreferrer">krrish@berri.ai</a></p>
+<p>一般安全相关问题联系邮箱地址：<a href="mailto:krrish@berri.ai" target="_blank" rel="noopener noreferrer">krrish@berri.ai</a></p>
+<p>供应商是否已被审计/认证？</p>
+<ul>
+<li>SOC 2 Type I。已认证。在企业版计划中可请求查看报告。</li>
+<li>SOC 2 Type II。正在进行中。证书将于 2025 年 4 月 15 日可用。</li>
+<li>ISO 27001。已认证。在企业版中可请求查看报告。</li>
+</ul>
+<p>是否实施了信息安全管理系统？</p>
+<ul>
+<li>是 - <a href="https://codeql.github.com/" target="_blank" rel="noopener noreferrer">CodeQL</a> 和全面的 ISMS 覆盖多个安全领域。</li>
+</ul>
+<p>关键事件（如授权、创建、更新更改）是否有日志记录？</p>
+<ul>
+<li>是 - 我们有 <a href="https://docs.litellm.ai/docs/proxy/multiple_admins#1-switch-on-audit-logs" target="_blank" rel="noopener noreferrer">审计日志</a></li>
+</ul>
+<p>供应商是否建立了网络安全事件管理程序？</p>
+<ul>
+<li>是，请求查看应急响应政策。</li>
+</ul>
+<p>供应商是否有漏洞披露政策？<a href="https://github.com/BerriAI/litellm?tab=security-ov-file#security-vulnerability-reporting-guidelines" target="_blank" rel="noopener noreferrer">是</a></p>
+<p>供应商是否会进行漏洞扫描？</p>
+<ul>
+<li>是，定期进行漏洞扫描，详情参见 <a href="#vulnerability-scanning">漏洞扫描</a> 部分。</li>
+</ul>
+<p>签署人姓名：Krish Amit Dholakia</p>
+<p>签署人邮箱：<a href="mailto:krrish@berri.ai" target="_blank" rel="noopener noreferrer">krrish@berri.ai</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/migration"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">迁移指南 - LiteLLM v1.0.0+</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/data_retention"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">数据保留策略</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#安全措施" class="table-of-contents__link toc-highlight">安全措施</a><ul><li><a href="#litellm-cloud" class="table-of-contents__link toc-highlight">LiteLLM Cloud</a></li><li><a href="#自托管-litellm-实例" class="table-of-contents__link toc-highlight">自托管 LiteLLM 实例</a></li></ul></li><li><a href="#安全认证" class="table-of-contents__link toc-highlight"><strong>安全认证</strong></a></li><li><a href="#litellm-cloud-支持的数据区域" class="table-of-contents__link toc-highlight">LiteLLM Cloud 支持的数据区域</a></li><li><a href="#个人数据收集" class="table-of-contents__link toc-highlight">个人数据收集</a><ul><li><a href="#自托管-litellm-用户" class="table-of-contents__link toc-highlight">自托管 LiteLLM 用户：</a></li><li><a href="#litellm-cloud-用户" class="table-of-contents__link toc-highlight">LiteLLM Cloud 用户：</a></li></ul></li><li><a href="#cookie-信息安全和隐私" class="table-of-contents__link toc-highlight">Cookie 信息、安全和隐私</a><ul><li><a href="#自托管-litellm-用户-1" class="table-of-contents__link toc-highlight">自托管 LiteLLM 用户：</a></li><li><a href="#litellm-cloud-用户-1" class="table-of-contents__link toc-highlight">LiteLLM Cloud 用户：</a></li></ul></li><li><a href="#安全漏洞报告指南" class="table-of-contents__link toc-highlight">安全漏洞报告指南</a></li><li><a href="#安全漏洞扫描" class="table-of-contents__link toc-highlight">安全漏洞扫描</a></li><li><a href="#法律合规常见问题" class="table-of-contents__link toc-highlight">法律/合规常见问题</a><ul><li><a href="#采购选项" class="table-of-contents__link toc-highlight">采购选项</a></li><li><a href="#供应商信息" class="table-of-contents__link toc-highlight">供应商信息</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://docs.litellm.ai/docs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Getting Started</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.com/invite/wuPM9dRgDw" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/LiteLLM" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/BerriAI/litellm/" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 liteLLM</div></div></div></footer><div id="inkeep-shadowradix-_R_p_" style="display:contents"></div><span></span></div>
+</body>
+</html>

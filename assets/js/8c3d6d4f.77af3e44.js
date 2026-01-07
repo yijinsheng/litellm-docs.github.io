@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_website=globalThis.webpackChunkmy_website||[]).push([[90089],{2011(e){e.exports=JSON.parse('{"metadata":{"permalink":"/release_notes","page":1,"postsPerPage":54,"totalPages":1,"totalCount":54,"blogDescription":"Blog","blogTitle":"Release Notes"}}')}}]);
